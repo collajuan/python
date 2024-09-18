@@ -1,0 +1,65 @@
+
+
+# string = input('ponga string: ')
+# if len(string) > 0:
+#     if string[0].lower() == string[-1].lower():
+#         print('son iguales')
+#     else:
+#         print('no lo son')
+
+
+# string = input('numero ')
+# string_inv = string[::-1]
+# print(string_inv)
+
+# print('es palindromo') if string == string_inv else print('no es plaindromo')
+
+# TODO hacer pequeña base de datos
+# base_de_datos = {
+#     1: {
+#         'nombre': 'juan',
+#         'edad' : 34,
+#         'notas': [1,2,3]
+#         },
+#     2: {
+#         'nombre': 'juan',
+#         'edad' : 34,
+#         'notas': [1,2,3]}
+#     }
+
+
+# print(base_de_datos[2]['nombre'])
+
+# TODO validar lista de telefonos nuve digitos y empezar por 6 o 7
+telefonos=['696 02 68 63', '666 66 66  66','74782 19_32']
+def validar_telefono(telefono):
+    for telefono in telefonos:
+        telefono = telefono.replace(" ","")
+        if len(telefono) == 9 and telefono[0] in ('6','7'):
+                print(telefono, 'telefono ok')
+        else:
+            print(telefono, 'no valido')
+
+# validar_telefono(telefonos)
+# TODO validar un diccionario con emails y si estan activos o no
+emails = {
+    "joaquin":{
+        "email": "starseeker_noether@outlook.com",
+        "activated": True
+    },
+    "rosalinda":{
+        "email": "example@gmail.com",
+        "activated": False
+    },
+}
+
+def validar_email(email):
+    emails_ok=[]
+    for usr in email:
+        #  print(email[usr]['activated'])
+         if email[usr]['activated'] == True:
+              emails_ok.append(email[usr]['email'])
+    return emails_ok
+
+
+print(validar_email(emails))
