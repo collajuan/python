@@ -65,8 +65,8 @@ def validar_email(email):
 # print(validar_email(emails))
 
 # TODO invertir lista
-def invertir(lista):
+def invertir(lista: list|tuple) -> list|tuple:
      return lista[::-1]
 
 lista = [1,2,3,4,5]
-print(invertir(lista))
+# print(invertir(lista))
