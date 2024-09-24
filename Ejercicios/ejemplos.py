@@ -88,9 +88,9 @@ def sumar_input() -> int|float:
 
 #TODO convertir ADN a ARN
 def adn_to_arn(adn: str) -> str:
-    mydict = {ord('A'): 'T', ord('T'):'A', ord('C'):'G', ord('G'):'C'}
-    arn_medio = adn.translate(mydict)
-    arn = arn_medio.replace('T','U')
+    mydict = {ord('A'): 'U', ord('T'):'A', ord('C'):'G', ord('G'):'C'}
+    arn = adn.translate(mydict)
+    # arn = arn_medio.replace('T','U')
     print(arn)
 
 adn='ACGTTGGTAAGG'
