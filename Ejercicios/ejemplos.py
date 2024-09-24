@@ -70,3 +70,18 @@ def invertir(lista: list|tuple) -> list|tuple:
 
 lista = [1,2,3,4,5]
 # print(invertir(lista))
+
+
+#TODO Pedir numero hasta recibir 0 y devolver la suma de todos esos numeros
+def sumar_input():
+    suma = 0
+    numero = 1
+
+    while numero !=0:
+          numero = int(input('ingrese un numero: '))
+          suma += numero
+
+    return suma
+
+resultado = sumar_input()
+print('La suma es: ', resultado)
