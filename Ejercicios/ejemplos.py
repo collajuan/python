@@ -73,7 +73,7 @@ lista = [1,2,3,4,5]
 
 
 #TODO Pedir numero hasta recibir 0 y devolver la suma de todos esos numeros
-def sumar_input():
+def sumar_input() -> int|float:
     suma = 0
     numero = 1
 
@@ -85,3 +85,4 @@ def sumar_input():
 
 resultado = sumar_input()
 print('La suma es: ', resultado)
+
