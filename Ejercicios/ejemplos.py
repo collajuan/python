@@ -94,4 +94,17 @@ def adn_to_arn(adn: str) -> str:
     print(arn)
 
 adn='ACGTTGGTAAgg'
-adn_to_arn(adn)
+# adn_to_arn(adn)
+
+#TODO recibe un string y devuelve lista con el cuadrado de los numeros que encuentre
+def numeros_al_cuadrado(strin: str) -> list:
+    lista_cuadrados = []
+    lista_string = list(strin)
+    print(lista_string)
+    # print(type(lista_string))
+    for n in lista_string:
+         if n.isdigit():
+              lista_cuadrados.append(int(n)*int(n))
+    return lista_cuadrados        
+
+print(numeros_al_cuadrado('sdfsdf5fdg897'))
