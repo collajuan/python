@@ -110,7 +110,7 @@ def numeros_al_cuadrado(string: str) -> list:
 # print(numeros_al_cuadrado('sdfsdf5fdg897'))
 
 #TODO validar IP
-from ipaddress import ip_address
+# from ipaddress import ip_address
 
 def validar_ip(ip: str) -> bool:
     #! ip_address(input('indique una IP: ')))  aun no vimos try - except
@@ -121,6 +121,6 @@ def validar_ip(ip: str) -> bool:
             return 'IP no valida'
     return 'IP valdia'
 
-print(validar_ip('192.1680.1.1'))
+# print(validar_ip('192.1680.1.1'))
 
 #TODO 4 numeros narcisistas con 3 cifras 1**3 + 5**3 + 3**3 = 153
