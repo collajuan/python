@@ -50,3 +50,6 @@ def validar_ip(ip: str) -> bool:
 # print(validar_ip('192.1680.1.1'))
 
 #TODO 4 numeros narcisistas con 3 cifras 1**3 + 5**3 + 3**3 = 153
+def numero_narcisista
+(num):
+
