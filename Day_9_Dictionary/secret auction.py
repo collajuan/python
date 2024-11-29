@@ -13,6 +13,7 @@ while more_users:
     answ = input("Want to add more users? (y/n): ")
     if answ != "y":
         more_users = False
+    print("\n" * 100)
 max_bid = 0
 for key in auctions:
     if auctions[key] > max_bid:
