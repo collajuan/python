@@ -23,9 +23,9 @@ first_number = 0
 print(art.logo)
 while True:
     if first_number == 0:
-        first_number = int(input('Type a number: '))
+        first_number = float(input('Type a number: '))
     operation = input('Select opertaion "+", "-", "*" or "/": ')
-    second_number = int(input('Type second number: '))
+    second_number = float(input('Type second number: '))
     result = operations[operation](first_number,second_number)
     print(f'El resultado es: {result}')
     continua = input(f'Want to continue workin with {result}? (y/n): ')
