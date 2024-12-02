@@ -1,15 +1,12 @@
 import random
-# import arty
-
-
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-
-user_cards = []
-computer_cards = []
+import art
 
 
 
-start = input('Start the game? (y/n): ')
+
+
+
+
 
 def calculate_score(cards):
     if sum(cards) == 21 and len(cards) == 2:
@@ -35,34 +32,41 @@ def compare(u_score, c_score):
     else:
         return "You lose 😤"
 
+def play_game():
+    print(art.logo)
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
-for _ in range(2):
-    user_cards.append(random.choice(cards))
-    computer_cards.append(random.choice(cards))
+    user_cards = []
+    computer_cards = []
+
+    for _ in range(2):
+        user_cards.append(random.choice(cards))
+        computer_cards.append(random.choice(cards))
 
 
 
-print(f'Yuor cards: {user_cards}, current score: {calculate_score(user_cards)}')
-print(f'Computer first card: {computer_cards[0]}')
-
-next_card = input('Want another card? (y/n): ')
-
-while next_card == 'y':
-    user_cards.append(random.choice(cards))
     print(f'Yuor cards: {user_cards}, current score: {calculate_score(user_cards)}')
-    if calculate_score(user_cards) > 21:
-        print('You lose')
-        next_card = 'n'
-    elif calculate_score(user_cards) == 21:
-        print('You Win!')
-        next_card = 'n'
-    else:
-        print(f'Computer first card: {computer_cards[0]}')
-        next_card = input('Want another card? (y/n): ')
+    print(f'Computer first card: {computer_cards[0]}')
 
-while calculate_score(computer_cards) !=0 and calculate_score(computer_cards) < 17:
-    computer_cards.append(random.choice(cards))
+    next_card = input('Want another card? (y/n): ')
 
+    while next_card == 'y':
+        user_cards.append(random.choice(cards))
+        print(f'Yuor cards: {user_cards}, current score: {calculate_score(user_cards)}')
+        if calculate_score(user_cards) > 21:
+            # print('You lose')
+            next_card = 'n'
+        else:
+            print(f'Computer first card: {computer_cards[0]}')
+            next_card = input('Want another card? (y/n): ')
 
+    while calculate_score(computer_cards) !=0 and calculate_score(computer_cards) < 17:
+        computer_cards.append(random.choice(cards))
 
+    
+    # print(f'Yuor cards: {user_cards}, current score: {calculate_score(user_cards)}')
+    print(f'Computer cards: {computer_cards}, current score: {calculate_score(computer_cards)}')
+    print(compare(calculate_score(user_cards), calculate_score(computer_cards)))
 
+while input('Start the game? (y/n): ') == 'y':
+    play_game()
