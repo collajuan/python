@@ -11,12 +11,6 @@ computer_cards = []
 
 start = input('Start the game? (y/n): ')
 
-# while start == 'y':
-for _ in range(2):
-    user_cards.append(random.choice(cards))
-
-computer_cards.append(random.choice(cards))
-
 def calculate_score(cards):
     if sum(cards) == 21 and len(cards) == 2:
         return 0
@@ -24,6 +18,29 @@ def calculate_score(cards):
         cards.remove(11)
         cards.append(1)
     return sum(cards)
+
+def compare(u_score, c_score):
+    if u_score == c_score:
+        return "Draw 🙃"
+    elif c_score == 0:
+        return "Lose, opponent has Blackjack 😱"
+    elif u_score == 0:
+        return "Win with a Blackjack 😎"
+    elif u_score > 21:
+        return "You went over. You lose 😭"
+    elif c_score > 21:
+        return "Opponent went over. You win 😁"
+    elif u_score > c_score:
+        return "You win 😃"
+    else:
+        return "You lose 😤"
+
+
+for _ in range(2):
+    user_cards.append(random.choice(cards))
+    computer_cards.append(random.choice(cards))
+
+
 
 print(f'Yuor cards: {user_cards}, current score: {calculate_score(user_cards)}')
 print(f'Computer first card: {computer_cards[0]}')
@@ -42,6 +59,9 @@ while next_card == 'y':
     else:
         print(f'Computer first card: {computer_cards[0]}')
         next_card = input('Want another card? (y/n): ')
+
+while calculate_score(computer_cards) !=0 and calculate_score(computer_cards) < 17:
+    computer_cards.append(random.choice(cards))
 
 
 
