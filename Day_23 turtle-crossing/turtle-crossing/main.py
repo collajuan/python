@@ -9,6 +9,7 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 
 turtle = Player()
+score_board = Scoreboard()
 
 screen.listen()
 screen.onkey(turtle.move, 'Up')
@@ -28,3 +29,16 @@ while game_is_on:
 
     for car in cars:
         car.move()
+        # Detect collision
+        if turtle.distance(car) < 20:
+            game_is_on = False
+            score_board.game_over()
+    
+    if turtle.is_at_finish_line():
+        turtle.go_to_start()
+        score_board.level_up()
+        for car in cars:
+            car.level_up()
+
+
+screen.exitonclick()

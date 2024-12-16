@@ -14,6 +14,10 @@ class CarManager(Turtle):
         self.color(random.choice(COLORS))
         self.goto(300, random.randint(-250,250))
         self.setheading(180)
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def move(self):
-        self.forward(STARTING_MOVE_DISTANCE)
+        self.forward(self.car_speed)
+
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
