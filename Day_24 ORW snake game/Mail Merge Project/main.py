@@ -15,7 +15,7 @@ with open("Day_24 ORW snake game/Mail Merge Project/Input/Names/invited_names.tx
 
 for name in list_names:    
     clear_name = name.strip('\n')
-    with open(f"Day_24 ORW snake game/Mail Merge Project/Output/ReadyToSend/letter_for_{clear_name}.txt", mode="a") as letter:
+    with open(f"Day_24 ORW snake game/Mail Merge Project/Output/ReadyToSend/letter_for_{clear_name}.docx", mode="a") as letter:
         for line in letter_lines:
             line_ok = line.replace("[name]",clear_name)
             letter.write(line_ok)
