@@ -7,6 +7,7 @@ def button_clicked():
 window = Tk()
 window.title("Mile to Km Converter")
 window.minsize(width=500,height=300)
+window.config(padx=20,pady=20)
 
 
 input = Entry(width=10)
