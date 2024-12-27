@@ -48,10 +48,27 @@ def save_data():
         else:
             with open("data.json", "w") as file:
                 json.dump(data, file, indent=4)
+        finally:
+            web_input.delete(0,'end')
+            pass_input.delete(0,'end')
 
 
-        web_input.delete(0,'end')
-        pass_input.delete(0,'end')
+# ---------------------------- Search Password ------------------------------- #
+def find_password():
+    website = web_input.get()
+    try:
+        with open("data.json", "r") as data_file:
+            data = json.load(data_file)
+    except FileNotFoundError:
+        messagebox.showerror(title="Error", message="No hay datos disponibles")
+    else:
+        if website in data:
+            messagebox.showinfo(title=website, message=f"Email: {data[website]["email"]}\nPassword: {data[website]["password"]}")
+        else:
+            messagebox.showerror(title="Error", message="No hay datos disponibles de ese sitio")
+        
+
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -77,21 +94,24 @@ pass_label = Label(text="Password")
 pass_label.grid(column=0,row=3)
 
 # Entrys
-web_input = Entry(width=45)
-web_input.grid(column=1,row=1, columnspan=2)
+web_input = Entry(width=35)
+web_input.grid(column=1,row=1)
 web_input.focus()
 
-email_input = Entry(width=45)
-email_input.grid(column=1,row=2, columnspan=2)
+email_input = Entry(width=35)
+email_input.grid(column=1,row=2)
 
 pass_input = Entry(width=31)
 pass_input.grid(column=1,row=3)
 
 # Buttons
+search_button = Button(text="Search", command=find_password)
+search_button.grid(column=2,row=1)
+
 pass_button = Button(text="Generate Password", command=generate_password)
 pass_button.grid(column=2,row=3)
 
-add_button = Button(text="Add", width=36, command=save_data)
+add_button = Button(text="Add", width=26, command=save_data)
 add_button.grid(column=1,row=4, columnspan=2)
 
 window.mainloop()
