@@ -27,7 +27,7 @@ import pandas
 
 data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
 # print(data["Primary Fur Color"].to_list())
-count_gray = len(data[data["Primary Fur Color"] == "Gray"])
+count_gray = len(data[  data["Primary Fur Color"] == "Gray"])
 count_cinnamon = len(data[data["Primary Fur Color"] == "Cinnamon"])
 count_black = len(data[data["Primary Fur Color"] == "Black"])
 # for element in data["Primary Fur Color"].to_list():
