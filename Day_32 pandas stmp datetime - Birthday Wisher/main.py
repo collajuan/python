@@ -7,6 +7,7 @@ password = ""
 
 with open("quotes.txt") as file_data:
     quotes_list = file_data.readlines()
+    
 
 weekday = dt.datetime.now().weekday()
 random_quote = random.choice(quotes_list)
