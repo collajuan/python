@@ -1,6 +1,6 @@
 import requests
 
-api_key = "f25167cc23c4740a0ed100f72a87851e"
+api_key = "..."
 lat =39.758602
 lon =-39.758602
 
@@ -29,4 +29,4 @@ for slot in data["list"]:
 if will_rain:
     print("Lloverá")
 else:
-        print("No lloverá")
+    print("No lloverá")
