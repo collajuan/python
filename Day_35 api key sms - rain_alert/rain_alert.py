@@ -1,8 +1,13 @@
 import requests
+from twilio.rest import Client
+
 
 api_key = "..."
-lat =39.758602
-lon =-39.758602
+account_sid = '...'
+auth_token = '...'
+lat =-34.901112
+lon =-56.164532
+
 
 
 endpoint = "https://api.openweathermap.org/data/2.5/weather"
@@ -27,6 +32,21 @@ for slot in data["list"]:
         will_rain = True
 
 if will_rain:
-    print("Lloverá")
+    client = Client(account_sid, auth_token)
+    message = client.messages.create(
+        body="It's going to rain today!",
+        from_='+1.......',
+        to='+34............'
+    )
+
+    print(message.status)
 else:
-    print("No lloverá")
+    client = Client(account_sid, auth_token)
+    message = client.messages.create(
+        body="Hoy no lloverá",
+        from_='+1.......',
+        to='+34............'
+    )
+    print("Hoy no lloverá")
+    print(message.status)
+    print(message.sid)
