@@ -3,7 +3,7 @@ import requests
 
 pixela_endpoint = "https://pixe.la/v1/users"
 USERNAME = "collajuan"
-TOKEN = "dslfkjdsfjl3434l32sdf"
+TOKEN = "...."
 
 user_params = {
     "token": TOKEN,
