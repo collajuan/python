@@ -8,7 +8,7 @@ data_manager = DataManager()
 sheet_data = data_manager.get_data()
 print(sheet_data)
 if sheet_data[0]['iataCode'] == '':
-    flight_search = FlightSearch()
+    flight_search = FlightSearch()    
     for row in sheet_data:
         row['iataCode'] = flight_search.get_iata_code(row['city'])
     data_manager.destination_data = sheet_data
