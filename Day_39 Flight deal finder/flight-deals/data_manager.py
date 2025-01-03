@@ -31,5 +31,5 @@ class DataManager:
             }
             response = requests.put(f"{self.endpoint}/{city["id"]}", json=put_params,auth=self.authorization)
             response.raise_for_status()
-            print(response.text)
+            # print(response.text)
 
