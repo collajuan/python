@@ -1,2 +1,2 @@
-Day_39 Flight deal finder/flight-deals/.env
-Day_39 Flight deal finder/flight-deals/.env
+# Ignorar archivos .env
+*.env
