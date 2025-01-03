@@ -19,7 +19,7 @@ parameters = {
     "symbol": STOCK_NAME,
     "apikey": '...'
     }
-url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=UC4CBLQNXJQBCLA4"
+
 r = requests.get(STOCK_ENDPOINT, params=parameters)
 r.raise_for_status()
 data = r.json()
