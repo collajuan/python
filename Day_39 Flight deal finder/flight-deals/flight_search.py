@@ -39,7 +39,7 @@ class FlightSearch:
         print(response.json()["expires_in"])
         return response.json()["access_token"]
     
-    def get_flight_data(self, origin_city_code, destination_city_code, from_time, to_time):
+    def get_flight_data(self, origin_city_code, destination_city_code, from_time, to_time, is_direct = True):
         headers={
             "Authorization": f"Bearer {self._token}"
         }
@@ -49,7 +49,7 @@ class FlightSearch:
             "destinationLocationCode": destination_city_code,
             "departureDate": from_time,
             "returnDate": to_time,
-            "nonStop": "true",
+            "nonStop": "true" if is_direct else "false",
             "currencyCode": "GBP",
             "adults": 1,
             "max": 10
