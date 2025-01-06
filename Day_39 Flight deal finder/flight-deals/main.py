@@ -47,7 +47,7 @@ for destination in sheet_data:
     print(f"{destination['city']}: £{cheapest_flight.price}")
     # Slowing down requests to avoid rate limit
     time.sleep(2)
-    if  cheapest_flight.price < destination["lowestPrice"]:
+    if cheapest_flight.price != "N/A" and cheapest_flight.price < destination["lowestPrice"]:
         send_sms = NotificationManager()
         send_sms.send_sms_alert(cheapest_flight)
     else:
