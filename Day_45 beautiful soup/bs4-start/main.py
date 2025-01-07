@@ -20,3 +20,33 @@ from bs4 import BeautifulSoup
 # print(headings)
 
 # **************** *Ejemplos sitios reales* ******************
+import requests
+
+response = requests.get("https://news.ycombinator.com/news")
+# print(response.text)
+
+soup = BeautifulSoup(response.text, "html.parser")
+# print(soup)
+articles = soup.select(".titleline > a")
+# print(articles)
+article_texts = [] 
+article_links = []
+for article_tag in articles:
+    text = article_tag.getText()
+    # print(text)
+    article_texts.append(text)
+    link = article_tag.get("href")
+    article_links.append(link)
+
+articles_upvotes = [int(score.getText().split()[0]) for score in soup.select(".score")]
+
+# print(article_texts)
+# print(article_links)
+# print(articles_upvotes)
+
+max_value = max(articles_upvotes)
+max_index = articles_upvotes.index(max_value)
+
+print(article_texts[max_index])
+print(article_links[max_index])
+print(articles_upvotes[max_index])
